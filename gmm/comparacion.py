@@ -6,7 +6,7 @@ import glob
 
 def debug_mascara(mascara, nombre):
     """Función para depurar máscaras"""
-    print(f"   🔍 DEBUG {nombre}:")
+    print(f"   DEBUG {nombre}:")
     print(f"      - Shape: {mascara.shape}")
     print(f"      - Tipo: {mascara.dtype}")
     print(f"      - Valores únicos: {np.unique(mascara)}")
@@ -73,8 +73,8 @@ def comparar_clusters_con_verdurinipiratini():
     # Obtener lista de archivos PNG en verdurinipiratini
     archivos_verdurinipiratini = glob.glob(os.path.join(verdurinipiratini_dir, '*.png'))
     
-    print(f"🔍 Encontrados {len(archivos_verdurinipiratini)} archivos en {verdurinipiratini_dir}")
-    print("🔄 Iniciando comparación con DEPURACIÓN...")
+    print(f"Encontrados {len(archivos_verdurinipiratini)} archivos en {verdurinipiratini_dir}")
+    print("Iniciando comparación con DEPURACIÓN...")
     
     resultados = []
     
@@ -86,14 +86,14 @@ def comparar_clusters_con_verdurinipiratini():
             
             # Verificar que existe el archivo correspondiente en clusters
             if not os.path.exists(ruta_cluster):
-                print(f"⚠️  No se encontró {archivo} en clusters, saltando...")
+                print(f" No se encontró {archivo} en clusters, saltando...")
                 continue
             
             # Cargar imágenes con PIL
             img_verdurinipiratini = Image.open(ruta_verdurinipiratini)
             img_cluster = Image.open(ruta_cluster)
             
-            print(f"\n📁 Procesando: {archivo}")
+            print(f"\n Procesando: {archivo}")
             print(f"   - Verdurinipiratini: {img_verdurinipiratini.size}, {img_verdurinipiratini.mode}")
             print(f"   - Cluster: {img_cluster.size}, {img_cluster.mode}")
             
@@ -101,8 +101,8 @@ def comparar_clusters_con_verdurinipiratini():
             verdurinipiratini_array = np.array(img_verdurinipiratini)
             cluster_array = np.array(img_cluster)
             
-            print(f"   📊 Array Verdurinipiratini: shape {verdurinipiratini_array.shape}, dtype {verdurinipiratini_array.dtype}")
-            print(f"   📊 Array Cluster: shape {cluster_array.shape}, dtype {cluster_array.dtype}")
+            print(f"   Array Verdurinipiratini: shape {verdurinipiratini_array.shape}, dtype {verdurinipiratini_array.dtype}")
+            print(f"   Array Cluster: shape {cluster_array.shape}, dtype {cluster_array.dtype}")
             
             # Convertir verdurinipiratini a máscara binaria - MÚLTIPLES ESTRATEGIAS
             if img_verdurinipiratini.mode == 'RGBA':
@@ -113,10 +113,10 @@ def comparar_clusters_con_verdurinipiratini():
                 # Elegir la que tenga más píxeles True
                 if mascara_verdurinipiratini_alpha.sum() > mascara_verdurinipiratini_rgb.sum():
                     mascara_verdurinipiratini = mascara_verdurinipiratini_alpha
-                    print(f"   🎯 Usando canal ALPHA para verdurinipiratini")
+                    print(f"   Usando canal ALPHA para verdurinipiratini")
                 else:
                     mascara_verdurinipiratini = mascara_verdurinipiratini_rgb
-                    print(f"   🎯 Usando canal RGB para verdurinipiratini")
+                    print(f"   Usando canal RGB para verdurinipiratini")
             else:
                 # Imagen sin alpha
                 verdurinipiratini_gray = np.array(img_verdurinipiratini.convert('L'))
@@ -126,7 +126,7 @@ def comparar_clusters_con_verdurinipiratini():
             if img_cluster.mode == 'RGBA':
                 # Para clusters: usar canal alpha (debería ser la máscara)
                 mascara_cluster = cluster_array[:, :, 3] > 0
-                print(f"   🎯 Usando canal ALPHA para cluster")
+                print(f"   Usando canal ALPHA para cluster")
             else:
                 # Cluster sin alpha
                 cluster_gray = np.array(img_cluster.convert('L'))
@@ -138,7 +138,7 @@ def comparar_clusters_con_verdurinipiratini():
             
             # Redimensionar si es necesario para que coincidan los tamaños
             if mascara_cluster.shape != mascara_verdurinipiratini.shape:
-                print(f"   🔄 Redimensionando cluster para coincidir tamaños...")
+                print(f"   Redimensionando cluster para coincidir tamaños...")
                 img_cluster_resized = img_cluster.resize(img_verdurinipiratini.size, Image.NEAREST)
                 cluster_array_resized = np.array(img_cluster_resized)
                 
@@ -154,7 +154,7 @@ def comparar_clusters_con_verdurinipiratini():
             metricas = calcular_metricas(mascara_verdurinipiratini, mascara_cluster)
             
             # DEPURACIÓN: Mostrar métricas detalladas
-            print(f"   📈 MÉTRICAS:")
+            print(f"   MÉTRICAS:")
             print(f"      - Intersección: {metricas['intersection']:,}")
             print(f"      - Unión: {metricas['union']:,}")
             print(f"      - Verdaderos Positivos: {metricas['true_positives']:,}")
@@ -178,20 +178,20 @@ def comparar_clusters_con_verdurinipiratini():
                 'pixeles_verdurinipiratini': np.sum(mascara_verdurinipiratini)
             })
             
-            print(f"✅ {archivo} → IoU = {metricas['iou']:.4f}")
+            print(f"{archivo} → IoU = {metricas['iou']:.4f}")
             
         except Exception as e:
-            print(f"❌ Error procesando {archivo}: {e}")
+            print(f"Error procesando {archivo}: {e}")
             import traceback
             traceback.print_exc()
     
     if not resultados:
-        print("❌ No se encontraron archivos para comparar.")
+        print("No se encontraron archivos para comparar.")
         return
     
     # Generar reporte detallado
     generar_reporte_detallado(resultados, output_dir)
-    print(f"\n🎉 Comparación completada. Resultados en: {output_dir}")
+    print(f"\nComparación completada. Resultados en: {output_dir}")
 
 def crear_visualizacion_comparacion(mascara_cluster, mascara_verdurinipiratini):
     """
@@ -254,7 +254,7 @@ def generar_reporte_detallado(resultados, output_dir):
             f.write(f"  Unión: {m['union']:,}\n")
             f.write("-" * 80 + "\n")
     
-    print(f"\n📊 RESUMEN DE MÉTRICAS:")
+    print(f"\nRESUMEN DE MÉTRICAS:")
     print(f"IoU Promedio: {iou_promedio:.4f}")
     print(f"Precision Promedio: {precision_promedio:.4f}")
     print(f"Recall Promedio: {recall_promedio:.4f}")
