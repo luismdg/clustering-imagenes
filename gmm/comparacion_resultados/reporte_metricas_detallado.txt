@@ -2,10 +2,10 @@ REPORTE DETALLADO - MÉTRICAS DE COMPARACIÓN
 ================================================================================
 
 ESTADÍSTICAS GENERALES:
-IoU Promedio: 0.3800
-Precision Promedio: 0.5242
-Recall Promedio: 0.5673
-F1-Score Promedio: 0.5134
+IoU Promedio: 0.3128
+Precision Promedio: 0.4401
+Recall Promedio: 0.4937
+F1-Score Promedio: 0.4349
 Archivos procesados: 21
 
 DETALLE POR ARCHIVO:
@@ -111,24 +111,24 @@ Archivo: chilerosa.png
   Unión: 49,915
 --------------------------------------------------------------------------------
 Archivo: chileverdecachi.png
-  IoU: 0.7820
-  Precision: 0.9156
-  Recall: 0.8428
-  F1-Score: 0.8777
-  Píxeles Cluster: 30,733
-  Píxeles Verdurinipiratini: 33,389
-  Intersección: 28,139
-  Unión: 35,983
+  IoU: 0.0012
+  Precision: 0.0029
+  Recall: 0.0020
+  F1-Score: 0.0024
+  Píxeles Cluster: 25,847
+  Píxeles Verdurinipiratini: 36,478
+  Intersección: 74
+  Unión: 62,251
 --------------------------------------------------------------------------------
 Archivo: chileverdeclaro.png
-  IoU: 0.6302
-  Precision: 0.8536
-  Recall: 0.7066
-  F1-Score: 0.7732
+  IoU: 0.0000
+  Precision: 0.0000
+  Recall: 0.0000
+  F1-Score: 0.0000
   Píxeles Cluster: 11,063
-  Píxeles Verdurinipiratini: 13,364
-  Intersección: 9,443
-  Unión: 14,984
+  Píxeles Verdurinipiratini: 33,389
+  Intersección: 0
+  Unión: 44,452
 --------------------------------------------------------------------------------
 Archivo: chileverdelimon.png
   IoU: 0.5563
