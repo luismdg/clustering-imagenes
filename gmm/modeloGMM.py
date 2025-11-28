@@ -3,103 +3,166 @@ import matplotlib.pyplot as plt
 from sklearn.mixture import GaussianMixture
 from PIL import Image
 import os
+import argparse
 
-# Crear carpeta para guardar los clusters
-carpeta_clusters = 'clusters'
-if not os.path.exists(carpeta_clusters):
-    os.makedirs(carpeta_clusters)
-
-# Cargar y Pre-procesar la Imagen
-imagen = Image.open('pirataverdu.png')
-imagen_rgb = np.array(imagen.convert('RGB'))
-
-# Reformatear: de (alto, ancho, canales) a (alto * ancho, canales) para el GMM
-alto, ancho, canales = imagen_rgb.shape
-datos_pixeles = imagen_rgb.reshape((-1, canales))
-
-# Ajustar el Modelo de Mezcla Gaussiana
-n_componentes = 20
-gmm = GaussianMixture(n_components=n_componentes, random_state=0)
-gmm.fit(datos_pixeles)
-
-# Predecir y Reconstruir
-etiquetas = gmm.predict(datos_pixeles)
-
-# Asignar cada etiqueta al centroide del cluster
-colores_cluster = gmm.means_.astype(int)  # colores promedio de cada cluster
-imagen_segmentada = colores_cluster[etiquetas].reshape((alto, ancho, 3))
-
-# Crear y guardar cada cluster individual en la carpeta
-for i in range(n_componentes):
-    # Crear una máscara para el cluster actual
-    mascara_cluster = (etiquetas == i).reshape(alto, ancho)
+def main():
+    # Obtener la ruta del directorio actual del script
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     
-    # Crear una imagen RGBA (con canal alpha) para el cluster
-    imagen_cluster = np.zeros((alto, ancho, 4), dtype=np.uint8)
+    # Configuración de argumentos
+    parser = argparse.ArgumentParser(description='Segmentación de imagen usando GMM')
+    parser.add_argument('--image_path', type=str, default='pirataverdu.png', 
+                       help='Ruta de la imagen a segmentar')
+    parser.add_argument('--n_components', type=int, default=20,
+                       help='Número de clusters para GMM')
+    parser.add_argument('--output_dir', type=str, default='clusters',
+                       help='Directorio de salida para los clusters')
     
-    # Para los píxeles que pertenecen al cluster, usar el color original
-    # y establecer alpha = 255 (opaco)
-    imagen_cluster[mascara_cluster, :3] = imagen_rgb[mascara_cluster]
-    imagen_cluster[mascara_cluster, 3] = 255  # Canal alpha
+    args = parser.parse_args()
     
-    # Para los píxeles que NO pertenecen al cluster, alpha = 0 (transparente)
-    imagen_cluster[~mascara_cluster, 3] = 0
+    # Construir rutas absolutas
+    parent_dir = os.path.dirname(current_dir)
+    image_path = os.path.join(parent_dir, args.image_path)
+    output_dir = os.path.join(current_dir, args.output_dir)
     
-    # Convertir a imagen PIL y guardar en la carpeta
-    img_pil = Image.fromarray(imagen_cluster, 'RGBA')
-    ruta_cluster = os.path.join(carpeta_clusters, f'cluster_{i:02d}.png')
-    img_pil.save(ruta_cluster)
+    # Crear carpeta para guardar los clusters
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+        print(f"Directorio '{output_dir}' creado.")
     
-    print(f'Cluster {i} guardado: {mascara_cluster.sum()} píxeles')
+    # Cargar y verificar la imagen
+    try:
+        imagen = Image.open(image_path)
+        print(f"Imagen cargada: {image_path}")
+        print(f"Tamaño original: {imagen.size}")
+        print(f"Modo: {imagen.mode}")
+    except FileNotFoundError:
+        print(f"Error: No se pudo encontrar la imagen en {image_path}")
+        return
+    except Exception as e:
+        print(f"Error al cargar la imagen: {e}")
+        return
 
-# Crear imagen fusionada de todos los clusters
-imagen_fusionada = np.zeros((alto, ancho, 4), dtype=np.uint8)
-
-# Combinar todos los clusters
-for i in range(n_componentes):
-    # Cargar cada cluster desde la carpeta
-    ruta_cluster = os.path.join(carpeta_clusters, f'cluster_{i:02d}.png')
-    cluster_img = np.array(Image.open(ruta_cluster))
+    # Convertir a RGB si es necesario
+    if imagen.mode != 'RGB':
+        imagen = imagen.convert('RGB')
+        print("Imagen convertida a RGB")
     
-    # Para cada píxel, si no es transparente en el cluster actual, agregarlo a la fusión
-    mascara_opaca = cluster_img[:, :, 3] > 0
-    imagen_fusionada[mascara_opaca] = cluster_img[mascara_opaca]
+    imagen_rgb = np.array(imagen)
 
-# Guardar la imagen fusionada en la carpeta
-ruta_fusion = os.path.join(carpeta_clusters, 'fusion_clusters.png')
-Image.fromarray(imagen_fusionada, 'RGBA').save(ruta_fusion)
+    # Reformatear: de (alto, ancho, canales) a (alto * ancho, canales) para el GMM
+    alto, ancho, canales = imagen_rgb.shape
+    datos_pixeles = imagen_rgb.reshape((-1, canales))
+    
+    print(f"Dimensiones de la imagen: {alto}x{ancho}")
+    print(f"Datos para GMM: {datos_pixeles.shape}")
 
-# Visualización
-plt.figure(figsize=(20, 5))
+    # Ajustar el Modelo de Mezcla Gaussiana
+    print(f"\nAjustando GMM con {args.n_components} componentes...")
+    gmm = GaussianMixture(n_components=args.n_components, random_state=0)
+    gmm.fit(datos_pixeles)
+    print("GMM ajustado correctamente")
 
-# Imagen original
-plt.subplot(1, 4, 1)
-plt.imshow(imagen_rgb)
-plt.title('Imagen Original')
-plt.axis('off')
+    # Predecir y Reconstruir
+    print("Prediciendo clusters...")
+    etiquetas = gmm.predict(datos_pixeles)
 
-# Imagen segmentada con GMM
-plt.subplot(1, 4, 2)
-plt.imshow(imagen_segmentada)
-plt.title('Imagen Segmentada con GMM (RGB)')
-plt.axis('off')
+    # Asignar cada etiqueta al centroide del cluster
+    colores_cluster = gmm.means_.astype(int)  # colores promedio de cada cluster
+    imagen_segmentada = colores_cluster[etiquetas].reshape((alto, ancho, 3))
 
-# Ejemplo de cluster individual
-plt.subplot(1, 4, 3)
-ruta_ejemplo = os.path.join(carpeta_clusters, 'cluster_00.png')
-cluster_ejemplo = np.array(Image.open(ruta_ejemplo))
-plt.imshow(cluster_ejemplo)
-plt.title('Ejemplo: Cluster 0 (con transparencia)')
-plt.axis('off')
+    # Crear y guardar cada cluster individual en la carpeta
+    print("\nGuardando clusters individuales...")
+    for i in range(args.n_components):
+        # Crear una máscara para el cluster actual
+        mascara_cluster = (etiquetas == i).reshape(alto, ancho)
+        
+        # Crear una imagen RGBA (con canal alpha) para el cluster
+        imagen_cluster = np.zeros((alto, ancho, 4), dtype=np.uint8)
+        
+        # Para los píxeles que pertenecen al cluster, usar el color original
+        # y establecer alpha = 255 (opaco)
+        imagen_cluster[mascara_cluster, :3] = imagen_rgb[mascara_cluster]
+        imagen_cluster[mascara_cluster, 3] = 255  # Canal alpha
+        
+        # Para los píxeles que NO pertenecen al cluster, alpha = 0 (transparente)
+        imagen_cluster[~mascara_cluster, 3] = 0
+        
+        # Convertir a imagen PIL y guardar en la carpeta
+        img_pil = Image.fromarray(imagen_cluster, 'RGBA')
+        ruta_cluster = os.path.join(output_dir, f'cluster_{i:02d}.png')
+        img_pil.save(ruta_cluster)
+        
+        print(f'Cluster {i:02d} guardado: {mascara_cluster.sum():,} píxeles')
 
-# Imagen fusionada de todos los clusters
-plt.subplot(1, 4, 4)
-plt.imshow(imagen_fusionada)
-plt.title('Fusión de Todos los Clusters')
-plt.axis('off')
+    # Crear imagen fusionada de todos los clusters
+    print("\nCreando imagen fusionada...")
+    imagen_fusionada = np.zeros((alto, ancho, 4), dtype=np.uint8)
 
-plt.tight_layout()
-plt.show()
+    # Combinar todos los clusters
+    for i in range(args.n_components):
+        # Cargar cada cluster desde la carpeta
+        ruta_cluster = os.path.join(output_dir, f'cluster_{i:02d}.png')
+        cluster_img = np.array(Image.open(ruta_cluster))
+        
+        # Para cada píxel, si no es transparente en el cluster actual, agregarlo a la fusión
+        mascara_opaca = cluster_img[:, :, 3] > 0
+        imagen_fusionada[mascara_opaca] = cluster_img[mascara_opaca]
 
-print(f"\nSe han guardado {n_componentes} clusters individuales en la carpeta '{carpeta_clusters}'.")
-print(f"Se ha guardado 'fusion_clusters.png' en la carpeta '{carpeta_clusters}' con la combinación de todos los clusters.")
+    # Guardar la imagen fusionada en la carpeta
+    ruta_fusion = os.path.join(output_dir, 'fusion_clusters.png')
+    Image.fromarray(imagen_fusionada, 'RGBA').save(ruta_fusion)
+    print("Imagen fusionada guardada")
+
+    # Visualización
+    print("\nGenerando visualización...")
+    plt.figure(figsize=(20, 5))
+
+    # Imagen original
+    plt.subplot(1, 4, 1)
+    plt.imshow(imagen_rgb)
+    plt.title('Imagen Original')
+    plt.axis('off')
+
+    # Imagen segmentada con GMM
+    plt.subplot(1, 4, 2)
+    plt.imshow(imagen_segmentada)
+    plt.title('Imagen Segmentada con GMM (RGB)')
+    plt.axis('off')
+
+    # Ejemplo de cluster individual
+    plt.subplot(1, 4, 3)
+    ruta_ejemplo = os.path.join(output_dir, 'cluster_00.png')
+    cluster_ejemplo = np.array(Image.open(ruta_ejemplo))
+    plt.imshow(cluster_ejemplo)
+    plt.title('Ejemplo: Cluster 0 (con transparencia)')
+    plt.axis('off')
+
+    # Imagen fusionada de todos los clusters
+    plt.subplot(1, 4, 4)
+    plt.imshow(imagen_fusionada)
+    plt.title('Fusión de Todos los Clusters')
+    plt.axis('off')
+
+    plt.tight_layout()
+    
+    # Guardar la figura de visualización
+    ruta_visualizacion = os.path.join(output_dir, 'visualizacion.png')
+    plt.savefig(ruta_visualizacion, dpi=150, bbox_inches='tight')
+    print(f"Visualización guardada en: {ruta_visualizacion}")
+    
+    # Mostrar la figura
+    plt.show()
+
+    print(f"\n" + "="*50)
+    print(f"PROCESO COMPLETADO")
+    print(f"="*50)
+    print(f"Se han guardado {args.n_components} clusters individuales en la carpeta '{output_dir}'")
+    print(f"Archivos generados:")
+    print(f"  - cluster_00.png a cluster_{args.n_components-1:02d}.png")
+    print(f"  - fusion_clusters.png")
+    print(f"  - visualizacion.png")
+    print(f"Ruta completa: {os.path.abspath(output_dir)}")
+
+if __name__ == "__main__":
+    main()
