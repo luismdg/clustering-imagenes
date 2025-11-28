@@ -1,0 +1,222 @@
+REPORTE DETALLADO - MÉTRICAS DE COMPARACIÓN
+================================================================================
+
+ESTADÍSTICAS GENERALES:
+IoU Promedio: 0.3800
+Precision Promedio: 0.5242
+Recall Promedio: 0.5673
+F1-Score Promedio: 0.5134
+Archivos procesados: 21
+
+DETALLE POR ARCHIVO:
+================================================================================
+Archivo: ajo.png
+  IoU: 0.2436
+  Precision: 0.3439
+  Recall: 0.4550
+  F1-Score: 0.3917
+  Píxeles Cluster: 63,136
+  Píxeles Verdurinipiratini: 47,715
+  Intersección: 21,711
+  Unión: 89,140
+--------------------------------------------------------------------------------
+Archivo: bolalila.png
+  IoU: 0.3115
+  Precision: 0.4875
+  Recall: 0.4631
+  F1-Score: 0.4750
+  Píxeles Cluster: 59,812
+  Píxeles Verdurinipiratini: 62,965
+  Intersección: 29,161
+  Unión: 93,616
+--------------------------------------------------------------------------------
+Archivo: cebollin.png
+  IoU: 0.2517
+  Precision: 0.2812
+  Recall: 0.7061
+  F1-Score: 0.4022
+  Píxeles Cluster: 63,136
+  Píxeles Verdurinipiratini: 25,142
+  Intersección: 17,753
+  Unión: 70,525
+--------------------------------------------------------------------------------
+Archivo: chileamarillo.png
+  IoU: 0.4243
+  Precision: 0.8253
+  Recall: 0.4661
+  F1-Score: 0.5958
+  Píxeles Cluster: 28,592
+  Píxeles Verdurinipiratini: 50,619
+  Intersección: 23,596
+  Unión: 55,615
+--------------------------------------------------------------------------------
+Archivo: chileazul.png
+  IoU: 0.0648
+  Precision: 0.0690
+  Recall: 0.5122
+  F1-Score: 0.1217
+  Píxeles Cluster: 106,855
+  Píxeles Verdurinipiratini: 14,401
+  Intersección: 7,376
+  Unión: 113,880
+--------------------------------------------------------------------------------
+Archivo: chileazul2.png
+  IoU: 0.2107
+  Precision: 0.2438
+  Recall: 0.6083
+  F1-Score: 0.3481
+  Píxeles Cluster: 106,855
+  Píxeles Verdurinipiratini: 42,823
+  Intersección: 26,049
+  Unión: 123,629
+--------------------------------------------------------------------------------
+Archivo: chileazul3.png
+  IoU: 0.3992
+  Precision: 0.6242
+  Recall: 0.5255
+  F1-Score: 0.5706
+  Píxeles Cluster: 28,070
+  Píxeles Verdurinipiratini: 33,341
+  Intersección: 17,521
+  Unión: 43,890
+--------------------------------------------------------------------------------
+Archivo: chilemorado.png
+  IoU: 0.3694
+  Precision: 0.5570
+  Recall: 0.5230
+  F1-Score: 0.5395
+  Píxeles Cluster: 31,392
+  Píxeles Verdurinipiratini: 33,430
+  Intersección: 17,485
+  Unión: 47,337
+--------------------------------------------------------------------------------
+Archivo: chilenaranja.png
+  IoU: 0.0940
+  Precision: 0.1794
+  Recall: 0.1648
+  F1-Score: 0.1718
+  Píxeles Cluster: 29,480
+  Píxeles Verdurinipiratini: 32,093
+  Intersección: 5,288
+  Unión: 56,285
+--------------------------------------------------------------------------------
+Archivo: chilerosa.png
+  IoU: 0.7025
+  Precision: 0.9777
+  Recall: 0.7140
+  F1-Score: 0.8253
+  Píxeles Cluster: 35,866
+  Píxeles Verdurinipiratini: 49,115
+  Intersección: 35,066
+  Unión: 49,915
+--------------------------------------------------------------------------------
+Archivo: chileverdecachi.png
+  IoU: 0.7820
+  Precision: 0.9156
+  Recall: 0.8428
+  F1-Score: 0.8777
+  Píxeles Cluster: 30,733
+  Píxeles Verdurinipiratini: 33,389
+  Intersección: 28,139
+  Unión: 35,983
+--------------------------------------------------------------------------------
+Archivo: chileverdeclaro.png
+  IoU: 0.6302
+  Precision: 0.8536
+  Recall: 0.7066
+  F1-Score: 0.7732
+  Píxeles Cluster: 11,063
+  Píxeles Verdurinipiratini: 13,364
+  Intersección: 9,443
+  Unión: 14,984
+--------------------------------------------------------------------------------
+Archivo: chileverdelimon.png
+  IoU: 0.5563
+  Precision: 0.8368
+  Recall: 0.6240
+  F1-Score: 0.7149
+  Píxeles Cluster: 12,547
+  Píxeles Verdurinipiratini: 16,825
+  Intersección: 10,499
+  Unión: 18,873
+--------------------------------------------------------------------------------
+Archivo: durazno.png
+  IoU: 0.1239
+  Precision: 0.1395
+  Recall: 0.5251
+  F1-Score: 0.2205
+  Píxeles Cluster: 62,706
+  Píxeles Verdurinipiratini: 16,663
+  Intersección: 8,749
+  Unión: 70,620
+--------------------------------------------------------------------------------
+Archivo: manzanarosa.png
+  IoU: 0.8320
+  Precision: 0.9098
+  Recall: 0.9069
+  F1-Score: 0.9083
+  Píxeles Cluster: 73,276
+  Píxeles Verdurinipiratini: 73,511
+  Intersección: 66,665
+  Unión: 80,122
+--------------------------------------------------------------------------------
+Archivo: pimientoamarillo.png
+  IoU: 0.4449
+  Precision: 0.6998
+  Recall: 0.5498
+  F1-Score: 0.6158
+  Píxeles Cluster: 38,326
+  Píxeles Verdurinipiratini: 48,779
+  Intersección: 26,819
+  Unión: 60,286
+--------------------------------------------------------------------------------
+Archivo: pimientoazul.png
+  IoU: 0.2805
+  Precision: 0.3735
+  Recall: 0.5296
+  F1-Score: 0.4381
+  Píxeles Cluster: 106,855
+  Píxeles Verdurinipiratini: 75,368
+  Intersección: 39,913
+  Unión: 142,310
+--------------------------------------------------------------------------------
+Archivo: pimientonaranja.png
+  IoU: 0.2236
+  Precision: 0.3862
+  Recall: 0.3467
+  F1-Score: 0.3654
+  Píxeles Cluster: 62,706
+  Píxeles Verdurinipiratini: 69,852
+  Intersección: 24,220
+  Unión: 108,338
+--------------------------------------------------------------------------------
+Archivo: pimientorojo.png
+  IoU: 0.5938
+  Precision: 0.7701
+  Recall: 0.7217
+  F1-Score: 0.7451
+  Píxeles Cluster: 185,298
+  Píxeles Verdurinipiratini: 197,736
+  Intersección: 142,701
+  Unión: 240,333
+--------------------------------------------------------------------------------
+Archivo: pimientorojo2.png
+  IoU: 0.0825
+  Precision: 0.0970
+  Recall: 0.3560
+  F1-Score: 0.1524
+  Píxeles Cluster: 115,200
+  Píxeles Verdurinipiratini: 31,379
+  Intersección: 11,170
+  Unión: 135,409
+--------------------------------------------------------------------------------
+Archivo: pimientoverde.png
+  IoU: 0.3584
+  Precision: 0.4366
+  Recall: 0.6669
+  F1-Score: 0.5277
+  Píxeles Cluster: 56,513
+  Píxeles Verdurinipiratini: 36,993
+  Intersección: 24,672
+  Unión: 68,834
+--------------------------------------------------------------------------------

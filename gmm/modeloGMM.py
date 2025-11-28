@@ -48,6 +48,12 @@ def main():
         imagen = imagen.convert('RGB')
         print("Imagen convertida a RGB")
     
+    # Redimensionar a 1920x1080 si es necesario
+    target_size = (1920, 1080)
+    if imagen.size != target_size:
+        print(f"Redimensionando imagen de {imagen.size} a {target_size}")
+        imagen = imagen.resize(target_size, Image.Resampling.LANCZOS)
+    
     imagen_rgb = np.array(imagen)
 
     # Reformatear: de (alto, ancho, canales) a (alto * ancho, canales) para el GMM
@@ -77,25 +83,24 @@ def main():
         # Crear una máscara para el cluster actual
         mascara_cluster = (etiquetas == i).reshape(alto, ancho)
         
-        # Crear una imagen RGBA (con canal alpha) para el cluster
+        # --- Crear PNG con fondo transparente y figura negra ---
         imagen_cluster = np.zeros((alto, ancho, 4), dtype=np.uint8)
         
-        # Para los píxeles que pertenecen al cluster, usar el color original
-        # y establecer alpha = 255 (opaco)
-        imagen_cluster[mascara_cluster, :3] = imagen_rgb[mascara_cluster]
-        imagen_cluster[mascara_cluster, 3] = 255  # Canal alpha
+        # Donde hay cluster: negro sólido (RGB = 0,0,0) y alpha = 255
+        # Donde no hay cluster: transparente (alpha = 0)
+        imagen_cluster[mascara_cluster, 3] = 255  # Alpha = 255 donde hay objeto
         
-        # Para los píxeles que NO pertenecen al cluster, alpha = 0 (transparente)
-        imagen_cluster[~mascara_cluster, 3] = 0
+        # Los canales RGB ya están en 0 por el np.zeros, así que queda negro
         
         # Convertir a imagen PIL y guardar en la carpeta
         img_pil = Image.fromarray(imagen_cluster, 'RGBA')
         ruta_cluster = os.path.join(output_dir, f'cluster_{i:02d}.png')
         img_pil.save(ruta_cluster)
         
-        print(f'Cluster {i:02d} guardado: {mascara_cluster.sum():,} píxeles')
+        pixeles_cluster = mascara_cluster.sum()
+        print(f'Cluster {i:02d} guardado: {pixeles_cluster:,} píxeles ({pixeles_cluster/(alto*ancho)*100:.1f}%)')
 
-    # Crear imagen fusionada de todos los clusters
+    # Crear imagen fusionada de todos los clusters (en negro también)
     print("\nCreando imagen fusionada...")
     imagen_fusionada = np.zeros((alto, ancho, 4), dtype=np.uint8)
 
@@ -107,7 +112,7 @@ def main():
         
         # Para cada píxel, si no es transparente en el cluster actual, agregarlo a la fusión
         mascara_opaca = cluster_img[:, :, 3] > 0
-        imagen_fusionada[mascara_opaca] = cluster_img[mascara_opaca]
+        imagen_fusionada[mascara_opaca, 3] = 255  # Alpha = 255 donde hay cualquier cluster
 
     # Guardar la imagen fusionada en la carpeta
     ruta_fusion = os.path.join(output_dir, 'fusion_clusters.png')
@@ -130,17 +135,18 @@ def main():
     plt.title('Imagen Segmentada con GMM (RGB)')
     plt.axis('off')
 
-    # Ejemplo de cluster individual
+    # Ejemplo de cluster individual (ahora en negro)
     plt.subplot(1, 4, 3)
     ruta_ejemplo = os.path.join(output_dir, 'cluster_00.png')
     cluster_ejemplo = np.array(Image.open(ruta_ejemplo))
-    plt.imshow(cluster_ejemplo)
-    plt.title('Ejemplo: Cluster 0 (con transparencia)')
+    # Para visualizar clusters negros, mostramos el canal alpha como escala de grises
+    plt.imshow(cluster_ejemplo[:, :, 3], cmap='gray')
+    plt.title('Ejemplo: Cluster 0 (negro con transparencia)')
     plt.axis('off')
 
     # Imagen fusionada de todos los clusters
     plt.subplot(1, 4, 4)
-    plt.imshow(imagen_fusionada)
+    plt.imshow(imagen_fusionada[:, :, 3], cmap='gray')
     plt.title('Fusión de Todos los Clusters')
     plt.axis('off')
 
@@ -158,8 +164,9 @@ def main():
     print(f"PROCESO COMPLETADO")
     print(f"="*50)
     print(f"Se han guardado {args.n_components} clusters individuales en la carpeta '{output_dir}'")
+    print(f"Dimensiones: {ancho}x{alto}")
     print(f"Archivos generados:")
-    print(f"  - cluster_00.png a cluster_{args.n_components-1:02d}.png")
+    print(f"  - cluster_00.png a cluster_{args.n_components-1:02d}.png (negro con transparencia)")
     print(f"  - fusion_clusters.png")
     print(f"  - visualizacion.png")
     print(f"Ruta completa: {os.path.abspath(output_dir)}")
