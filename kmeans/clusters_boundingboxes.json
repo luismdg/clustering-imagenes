@@ -1,0 +1,290 @@
+[
+  {
+    "id": 1,
+    "bbox": {
+      "x": 0,
+      "y": 112,
+      "w": 1616,
+      "h": 968
+    },
+    "area": 1005708,
+    "cluster": 0,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_01_mask.png"
+  },
+  {
+    "id": 2,
+    "bbox": {
+      "x": 0,
+      "y": 0,
+      "w": 1616,
+      "h": 689
+    },
+    "area": 442991,
+    "cluster": 2,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_02_mask.png"
+  },
+  {
+    "id": 3,
+    "bbox": {
+      "x": 296,
+      "y": 698,
+      "w": 1320,
+      "h": 382
+    },
+    "area": 261881,
+    "cluster": 2,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_03_mask.png"
+  },
+  {
+    "id": 4,
+    "bbox": {
+      "x": 1011,
+      "y": 449,
+      "w": 560,
+      "h": 400
+    },
+    "area": 149448,
+    "cluster": 1,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_04_mask.png"
+  },
+  {
+    "id": 5,
+    "bbox": {
+      "x": 649,
+      "y": 427,
+      "w": 341,
+      "h": 325
+    },
+    "area": 65061,
+    "cluster": 6,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_05_mask.png"
+  },
+  {
+    "id": 6,
+    "bbox": {
+      "x": 16,
+      "y": 765,
+      "w": 276,
+      "h": 252
+    },
+    "area": 52101,
+    "cluster": 3,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_06_mask.png"
+  },
+  {
+    "id": 7,
+    "bbox": {
+      "x": 1238,
+      "y": 310,
+      "w": 365,
+      "h": 331
+    },
+    "area": 41594,
+    "cluster": 9,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_07_mask.png"
+  },
+  {
+    "id": 8,
+    "bbox": {
+      "x": 219,
+      "y": 254,
+      "w": 242,
+      "h": 271
+    },
+    "area": 36551,
+    "cluster": 17,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_08_mask.png"
+  },
+  {
+    "id": 9,
+    "bbox": {
+      "x": 1315,
+      "y": 685,
+      "w": 262,
+      "h": 218
+    },
+    "area": 36287,
+    "cluster": 14,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_09_mask.png"
+  },
+  {
+    "id": 10,
+    "bbox": {
+      "x": 371,
+      "y": 726,
+      "w": 329,
+      "h": 182
+    },
+    "area": 36061,
+    "cluster": 4,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_10_mask.png"
+  },
+  {
+    "id": 11,
+    "bbox": {
+      "x": 1040,
+      "y": 174,
+      "w": 269,
+      "h": 240
+    },
+    "area": 33513,
+    "cluster": 16,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_11_mask.png"
+  },
+  {
+    "id": 12,
+    "bbox": {
+      "x": 604,
+      "y": 748,
+      "w": 355,
+      "h": 139
+    },
+    "area": 31852,
+    "cluster": 15,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_12_mask.png"
+  },
+  {
+    "id": 13,
+    "bbox": {
+      "x": 263,
+      "y": 627,
+      "w": 253,
+      "h": 197
+    },
+    "area": 27537,
+    "cluster": 10,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_13_mask.png"
+  },
+  {
+    "id": 14,
+    "bbox": {
+      "x": 736,
+      "y": 194,
+      "w": 261,
+      "h": 222
+    },
+    "area": 27177,
+    "cluster": 8,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_14_mask.png"
+  },
+  {
+    "id": 15,
+    "bbox": {
+      "x": 501,
+      "y": 578,
+      "w": 300,
+      "h": 201
+    },
+    "area": 26747,
+    "cluster": 7,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_15_mask.png"
+  },
+  {
+    "id": 16,
+    "bbox": {
+      "x": 94,
+      "y": 545,
+      "w": 334,
+      "h": 267
+    },
+    "area": 26234,
+    "cluster": 13,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_16_mask.png"
+  },
+  {
+    "id": 17,
+    "bbox": {
+      "x": 36,
+      "y": 515,
+      "w": 245,
+      "h": 262
+    },
+    "area": 25358,
+    "cluster": 21,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_17_mask.png"
+  },
+  {
+    "id": 18,
+    "bbox": {
+      "x": 247,
+      "y": 367,
+      "w": 284,
+      "h": 185
+    },
+    "area": 24757,
+    "cluster": 12,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_18_mask.png"
+  },
+  {
+    "id": 19,
+    "bbox": {
+      "x": 436,
+      "y": 241,
+      "w": 186,
+      "h": 220
+    },
+    "area": 20537,
+    "cluster": 17,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_19_mask.png"
+  },
+  {
+    "id": 20,
+    "bbox": {
+      "x": 0,
+      "y": 702,
+      "w": 284,
+      "h": 378
+    },
+    "area": 19527,
+    "cluster": 2,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_20_mask.png"
+  },
+  {
+    "id": 21,
+    "bbox": {
+      "x": 916,
+      "y": 372,
+      "w": 308,
+      "h": 123
+    },
+    "area": 18458,
+    "cluster": 5,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_21_mask.png"
+  },
+  {
+    "id": 22,
+    "bbox": {
+      "x": 612,
+      "y": 176,
+      "w": 188,
+      "h": 152
+    },
+    "area": 17142,
+    "cluster": 23,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_22_mask.png"
+  },
+  {
+    "id": 23,
+    "bbox": {
+      "x": 495,
+      "y": 461,
+      "w": 173,
+      "h": 176
+    },
+    "area": 12689,
+    "cluster": 22,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_23_mask.png"
+  },
+  {
+    "id": 24,
+    "bbox": {
+      "x": 963,
+      "y": 473,
+      "w": 85,
+      "h": 255
+    },
+    "area": 12280,
+    "cluster": 1,
+    "path": "c:\\Users\\mayra\\OneDrive\\Escritorio\\UNI\\algoritmos_avanzados\\evidencia2\\clustering-imagenes\\kmeans\\clusters_kmeans\\verdura_24_mask.png"
+  }
+]
