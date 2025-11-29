@@ -1,0 +1,135 @@
+RESULTADOS DE COMPARACIÓN DE MÁSCARAS
+==================================================
+
+COMPARACIÓN: Ajo vs Vegetal 01
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\ajo.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_simple\vegetal_01.png
+IoU: 0.3139
+Dice: 0.4778
+------------------------------
+COMPARACIÓN: Bolalila vs Vegetal 18
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\bolalila.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_18.png
+IoU: 0.2116
+Dice: 0.3493
+------------------------------
+COMPARACIÓN: Cebollin vs Vegetal 18
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\cebollin.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_18.png
+IoU: 0.1523
+Dice: 0.2644
+------------------------------
+COMPARACIÓN: Chile Amarillo vs Vegetal 04
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\chileamarillo.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_04.png
+IoU: 0.6313
+Dice: 0.7740
+------------------------------
+COMPARACIÓN: Chile Azul vs Vegetal 06
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\chileazul.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_simple\vegetal_06.png
+IoU: 0.0517
+Dice: 0.0983
+------------------------------
+COMPARACIÓN: Chile Azul 2 vs Vegetal 21
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\chileazul2.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_21.png
+IoU: 0.5654
+Dice: 0.7223
+------------------------------
+COMPARACIÓN: Chile Azul 3 vs Vegetal 18
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\chileazul3.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_18.png
+IoU: 0.1433
+Dice: 0.2507
+------------------------------
+COMPARACIÓN: Chile Morado vs Vegetal 10
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\chilemorado.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_10.png
+IoU: 0.2340
+Dice: 0.3792
+------------------------------
+COMPARACIÓN: Chile Naranja vs Vegetal 10
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\chilenaranja.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_10.png
+IoU: 0.0644
+Dice: 0.1210
+------------------------------
+COMPARACIÓN: Chile Rosa vs Vegetal 14
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\chilerosa.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_14.png
+IoU: 0.2737
+Dice: 0.4298
+------------------------------
+COMPARACIÓN: Chile Verde Cachi vs Vegetal 06
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\chileverdecachi.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_06.png
+IoU: 0.5032
+Dice: 0.6695
+------------------------------
+COMPARACIÓN: Chile Verde Claro vs Vegetal 03
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\chileverdeclaro.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_03.png
+IoU: 0.5862
+Dice: 0.7392
+------------------------------
+COMPARACIÓN: Chile Verde Limón vs Vegetal 16
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\chileverdelimon.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_16.png
+IoU: 0.5782
+Dice: 0.7327
+------------------------------
+COMPARACIÓN: Chile Verde Limón 2 vs Vegetal 03
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\chileverdelimon2.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_03.png
+IoU: 0.2102
+Dice: 0.3473
+------------------------------
+COMPARACIÓN: Durazno vs Vegetal 13
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\durazno.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_13.png
+IoU: 0.4552
+Dice: 0.6256
+------------------------------
+COMPARACIÓN: Manzana Rosa vs Vegetal 07
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\manzanarosa.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_07.png
+IoU: 0.8342
+Dice: 0.9096
+------------------------------
+COMPARACIÓN: Pimiento Amarillo vs Vegetal 14
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\pimientoamarillo.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_14.png
+IoU: 0.1935
+Dice: 0.3242
+------------------------------
+COMPARACIÓN: Pimiento Azul vs Vegetal 05
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\pimientoazul.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_05.png
+IoU: 0.4034
+Dice: 0.5749
+------------------------------
+COMPARACIÓN: Pimiento Naranja vs Vegetal 19
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\pimientonaranja.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_19.png
+IoU: 0.2541
+Dice: 0.4052
+------------------------------
+COMPARACIÓN: Pimiento Rojo vs Vegetal 20
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\pimientorojo.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_20.png
+IoU: 0.6142
+Dice: 0.7610
+------------------------------
+COMPARACIÓN: Pimiento Rojo 2 vs Vegetal 01
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\pimientorojo2.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_01.png
+IoU: 0.2262
+Dice: 0.3689
+------------------------------
+COMPARACIÓN: Pimiento Verde vs Vegetal 06
+Archivo 1: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\verdurinipiratini\pimientoverde.png
+Archivo 2: c:\Users\mayra\OneDrive\Escritorio\UNI\algoritmos_avanzados\evidencia2\clustering-imagenes\espectral\..\espectral\mascaras_verduras_corregido\vegetal_06.png
+IoU: 0.3972
+Dice: 0.5686
+------------------------------
